@@ -9,7 +9,7 @@ namespace IdentityServerAspNetIdentity.Data
         public ApplicationDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
-            optionsBuilder.UseSqlite("Data Source=AspIdUsers.db");
+            optionsBuilder.UseNpgsql("Server=localhost; User Id=postgres; Database=AspNetIdentity; Port=5432; Password=postgres;");
 
             var dummyTenant = new TenantInfo();
             return new ApplicationDbContext(dummyTenant, optionsBuilder.Options);

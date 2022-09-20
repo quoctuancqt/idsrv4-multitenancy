@@ -33,7 +33,7 @@ namespace IdentityServerAspNetIdentity
             services.AddControllersWithViews();
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlite(Configuration.GetConnectionString("AspNetIdentityConnection")));
+                options.UseNpgsql(Configuration.GetConnectionString("AspNetIdentityConnection")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
@@ -52,7 +52,7 @@ namespace IdentityServerAspNetIdentity
             .AddConfigurationStore<MultiTenantConfigurationDbContext>(options =>
             {
                 options.ConfigureDbContext = optionsBuilder =>
-                    optionsBuilder.UseSqlite(Configuration.GetConnectionString("ConfigurationStoreConnection"));
+                    optionsBuilder.UseNpgsql(Configuration.GetConnectionString("ConfigurationStoreConnection"));
             })
             .AddAspNetIdentity<ApplicationUser>();
 

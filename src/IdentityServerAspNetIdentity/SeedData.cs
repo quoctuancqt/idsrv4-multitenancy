@@ -30,7 +30,7 @@ namespace IdentityServerAspNetIdentity
             services.AddLogging();
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlite(config.GetConnectionString("AspNetIdentityConnection")));
+                options.UseNpgsql(config.GetConnectionString("AspNetIdentityConnection")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
@@ -38,7 +38,7 @@ namespace IdentityServerAspNetIdentity
 
             services.AddConfigurationDbContext<MultiTenantConfigurationDbContext>(options =>
                 options.ConfigureDbContext = optionsBuilder =>
-                    optionsBuilder.UseSqlite(config.GetConnectionString("ConfigurationStoreConnection")));
+                    optionsBuilder.UseNpgsql(config.GetConnectionString("ConfigurationStoreConnection")));
 
             services.AddMultiTenant<TenantInfo>()
                 .WithConfigurationStore();
@@ -60,7 +60,6 @@ namespace IdentityServerAspNetIdentity
                         Log.Debug($"Tenant: {tenant.Name}, {tenant.Identifier}, {tenant.Id}");
 
                         var applicationDbContext = scope.ServiceProvider.GetService<ApplicationDbContext>();
-
                         applicationDbContext.Database.Migrate();
 
                         var userMgr = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
@@ -126,8 +125,8 @@ namespace IdentityServerAspNetIdentity
 
                         var configurationDbContext =
                             scope.ServiceProvider.GetRequiredService<MultiTenantConfigurationDbContext>();
-
                         configurationDbContext.Database.Migrate();
+
 
                         if (!configurationDbContext.IdentityResources.Any())
                         {

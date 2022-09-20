@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dev\\RAndD\\Authenticate Authorization\\MultiTenantIdentityServer4\\src\\IdentityServerAspNetIdentity\\IdentityServerAspNetIdentity.csproj": {}
+    "C:\\dev\\RAndD\\Authenticate Authorization\\idsrv4-multitenancy\\src\\IdentityServerAspNetIdentity\\IdentityServerAspNetIdentity.csproj": {}
   },
   "projects": {
-    "C:\\dev\\RAndD\\Authenticate Authorization\\MultiTenantIdentityServer4\\src\\IdentityServerAspNetIdentity\\IdentityServerAspNetIdentity.csproj": {
+    "C:\\dev\\RAndD\\Authenticate Authorization\\idsrv4-multitenancy\\src\\IdentityServerAspNetIdentity\\IdentityServerAspNetIdentity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\RAndD\\Authenticate Authorization\\MultiTenantIdentityServer4\\src\\IdentityServerAspNetIdentity\\IdentityServerAspNetIdentity.csproj",
+        "projectUniqueName": "C:\\dev\\RAndD\\Authenticate Authorization\\idsrv4-multitenancy\\src\\IdentityServerAspNetIdentity\\IdentityServerAspNetIdentity.csproj",
         "projectName": "IdentityServerAspNetIdentity",
-        "projectPath": "C:\\dev\\RAndD\\Authenticate Authorization\\MultiTenantIdentityServer4\\src\\IdentityServerAspNetIdentity\\IdentityServerAspNetIdentity.csproj",
+        "projectPath": "C:\\dev\\RAndD\\Authenticate Authorization\\idsrv4-multitenancy\\src\\IdentityServerAspNetIdentity\\IdentityServerAspNetIdentity.csproj",
         "packagesPath": "C:\\Users\\tuan.cao\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\RAndD\\Authenticate Authorization\\MultiTenantIdentityServer4\\src\\IdentityServerAspNetIdentity\\obj\\",
+        "outputPath": "C:\\dev\\RAndD\\Authenticate Authorization\\idsrv4-multitenancy\\src\\IdentityServerAspNetIdentity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -88,6 +88,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.9, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[6.0.7, )"
             },
             "Serilog.AspNetCore": {
               "target": "Package",
