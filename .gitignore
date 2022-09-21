@@ -453,3 +453,7 @@ $RECYCLE.BIN/
 !.vscode/launch.json
 !.vscode/extensions.json
 /src/Lightbox.Core.Api/appsettings.Development.json
+obj
+bin
+obj
+bin
